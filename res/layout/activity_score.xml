@@ -1,0 +1,180 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScoreActivity" 
+    android:background="@color/white">
+
+    <TableLayout
+        android:id="@+id/scoreHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/backgroundGrey"
+        android:padding="-10dp"
+        android:stretchColumns="0,1,2,3" >
+
+        <TableRow
+            android:id="@+id/scoreHeaderTableRow0"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/redName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Red "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/redScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="0"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/blueScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="0"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/blueName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Blue"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/scoreHeader"
+        android:paddingTop="15dp"  >
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            
+            >
+
+            <com.example.ticktaktopple.activity.ScoreWidget
+                android:id="@+id/scoreComponent1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+            </com.example.ticktaktopple.activity.ScoreWidget>
+
+            <com.example.ticktaktopple.activity.ScoreWidget
+                android:id="@+id/scoreComponent2"
+                android:layout_width="0dp" 
+                android:layout_weight="1"
+                android:gravity="center">
+            </com.example.ticktaktopple.activity.ScoreWidget>
+
+            <com.example.ticktaktopple.activity.ScoreWidget
+                android:id="@+id/scoreComponent3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+            </com.example.ticktaktopple.activity.ScoreWidget>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+            android:gravity="center" >
+
+            <com.example.ticktaktopple.activity.ScoreWidget
+                android:id="@+id/scoreComponent4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:gravity="center" >
+            </com.example.ticktaktopple.activity.ScoreWidget>
+
+            <com.example.ticktaktopple.activity.RampGoalWidget
+                android:id="@+id/rampGoalWidget1"
+                android:layout_width="0dp"
+                
+                android:layout_weight="0.75"
+                android:gravity="center"
+                android:scaleType="fitCenter"
+				android:adjustViewBounds="true"
+                >
+            </com.example.ticktaktopple.activity.RampGoalWidget>
+
+            <com.example.ticktaktopple.activity.ScoreWidget
+                android:id="@+id/scoreComponent5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                 >
+            </com.example.ticktaktopple.activity.ScoreWidget>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <com.example.ticktaktopple.activity.ScoreWidget
+                android:id="@+id/scoreComponent6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+            </com.example.ticktaktopple.activity.ScoreWidget>
+
+            <com.example.ticktaktopple.activity.ScoreWidget
+                android:id="@+id/scoreComponent7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+            </com.example.ticktaktopple.activity.ScoreWidget>
+
+            <com.example.ticktaktopple.activity.ScoreWidget
+                android:id="@+id/scoreComponent8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+            </com.example.ticktaktopple.activity.ScoreWidget>
+        </TableRow>
+
+		<com.example.ticktaktopple.score.ScoreController
+            android:id="@+id/scoreContoller1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </com.example.ticktaktopple.score.ScoreController>
+
+    </TableLayout>
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+    android:textAlignment="center"
+    android:padding="0dp"
+    >
+
+    <TextView
+        android:id="@+id/redPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAlignment="center"
+        android:textColor="@color/red"
+        android:padding="5dp" />
+
+        <TextView
+        android:id="@+id/divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAlignment="center" />
+    
+    <TextView
+        android:id="@+id/bluePoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:padding="5dp"/>
+	
+</LinearLayout>

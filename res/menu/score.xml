@@ -1,0 +1,4 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/scoreMode" android:checkable="true" android:visible="true" android:checked="false" android:title="Minimal Scoring Mode" android:enabled="true"></item>
+
+</menu>

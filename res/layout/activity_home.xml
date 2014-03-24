@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".HomeActivity" >
+
+    <ImageView
+        android:id="@+id/goalImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/vex_rds_logo" />
+
+    <TableLayout
+        android:id="@+id/TableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/goalImage"
+        android:showDividers="middle"
+        android:stretchColumns="2" >
+
+        <TableRow
+            android:id="@+id/scoreHeaderTableRow0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/rulesButton"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="fill_parent" />
+
+            <Button
+                android:id="@+id/calcButton"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="fill_parent" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</RelativeLayout>
