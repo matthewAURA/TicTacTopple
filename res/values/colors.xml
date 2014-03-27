@@ -2,7 +2,5 @@
 
     <color name="black_overlay">#66000000</color>
 	<color name="white">#FFFFFF</color>
-	<color name="red_underlay">#80FF0000</color>
-	<color name="blue_underlay">#800000FF</color>
 	
 </resources>
