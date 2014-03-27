@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     tools:context=".ScoreActivity" 
     android:background="@color/white">
+    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content"></FrameLayout>
 
     <TableLayout
         android:id="@+id/scoreHeader"
@@ -108,18 +109,18 @@
             android:layout_weight="100"
             android:gravity="center" >
 
-            <com.example.ticktaktopple.activity.ScoreWidget
+            <com.example.ticktaktopple.activity.VerticalScoreWidget
                 android:id="@+id/scoreComponent4"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="0.25"
-                android:gravity="center" >
-            </com.example.ticktaktopple.activity.ScoreWidget>
+                android:gravity="center"
+                android:scaleType="fitCenter"
+				android:adjustViewBounds="true" >
+            </com.example.ticktaktopple.activity.VerticalScoreWidget>
 
             <com.example.ticktaktopple.activity.RampGoalWidget
                 android:id="@+id/rampGoalWidget1"
                 android:layout_width="0dp"
-                
                 android:layout_weight="0.75"
                 android:gravity="center"
                 android:scaleType="fitCenter"
@@ -127,14 +128,14 @@
                 >
             </com.example.ticktaktopple.activity.RampGoalWidget>
 
-            <com.example.ticktaktopple.activity.ScoreWidget
+            <com.example.ticktaktopple.activity.VerticalScoreWidget
                 android:id="@+id/scoreComponent5"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="0.25"
                 android:gravity="center"
-                 >
-            </com.example.ticktaktopple.activity.ScoreWidget>
+                android:scaleType="fitCenter"
+				android:adjustViewBounds="true" >
+            </com.example.ticktaktopple.activity.VerticalScoreWidget>
 
         </TableRow>
 

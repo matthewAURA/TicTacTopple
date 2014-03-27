@@ -50,8 +50,8 @@ public class ScoreActivity extends Activity implements ScoreInvalidateListener{
 		goal1 = (ScoreWidget) this.findViewById(R.id.scoreComponent1);
 		goal2 = (ScoreWidget) this.findViewById(R.id.scoreComponent2);
 		goal3 = (ScoreWidget) this.findViewById(R.id.scoreComponent3);
-		goal4 = (ScoreWidget) this.findViewById(R.id.scoreComponent4);
-		goal5 = (ScoreWidget) this.findViewById(R.id.scoreComponent5);
+		goal4 = (VerticalScoreWidget) this.findViewById(R.id.scoreComponent4);
+		goal5 = (VerticalScoreWidget) this.findViewById(R.id.scoreComponent5);
 		goal6 = (ScoreWidget) this.findViewById(R.id.scoreComponent6);
 		goal7 = (ScoreWidget) this.findViewById(R.id.scoreComponent7);
 		goal8 = (ScoreWidget) this.findViewById(R.id.scoreComponent8);

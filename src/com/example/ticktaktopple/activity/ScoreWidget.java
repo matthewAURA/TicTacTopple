@@ -20,24 +20,22 @@ import android.widget.TextView;
 
 public class ScoreWidget extends LinearLayout{
 
-	private TextView redText;
-	private TextView blueText;
-	private Goal goal;
-	private List<ScoreInvalidateListener> scoreInvalid;
+	protected TextView redText;
+	protected TextView blueText;
+	protected Goal goal;
+	protected List<ScoreInvalidateListener> scoreInvalid;
 	
 	public ScoreWidget(Context context,AttributeSet attrs){
 		super(context,attrs);
-		LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if(inflater != null){      
-        	inflater.inflate(R.layout.score_component, this);
-        }
+		
+		this.inflateView(context);
         
         scoreInvalid = new ArrayList<ScoreInvalidateListener>();
         
         redText = (TextView) this.findViewById(R.id.redPoints);
         blueText= (TextView) this.findViewById(R.id.bluePoints);
-        redText.setText("0");
-        blueText.setText("0");
+        redText.setText(" 0");
+        blueText.setText("0 ");
         redText.setTextSize(this.getResources().getDimension(R.dimen.scoreTextSize));
         blueText.setTextSize(this.getResources().getDimension(R.dimen.scoreTextSize));
         this.setOnClickListener(new OnClickListener(){
@@ -50,6 +48,13 @@ public class ScoreWidget extends LinearLayout{
         	
         });
        
+	}
+	
+	protected void inflateView(Context context){
+		LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        if(inflater != null){      
+        	inflater.inflate(R.layout.score_component, this);
+        }
 	}
 	
 	public void updateListener(boolean simpleMode, final ScoreController control){
@@ -93,7 +98,13 @@ public class ScoreWidget extends LinearLayout{
 	public void invalidate(){
 		super.invalidate();
 		redText.setText(Integer.toString(goal.getObjects(Colour.Red)));
+		if(redText.getText().toString().length() < 2){
+			redText.setText(" " + Integer.toString(goal.getObjects(Colour.Red)));
+		}
 		blueText.setText(Integer.toString(goal.getObjects(Colour.Blue)));
+		if(blueText.getText().toString().length() < 2){
+			blueText.setText(Integer.toString(goal.getObjects(Colour.Blue))+ " ");
+		}
 		for (ScoreInvalidateListener l:this.scoreInvalid){
 			l.update();
 		}
