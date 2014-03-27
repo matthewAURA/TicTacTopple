@@ -12,9 +12,10 @@ public class VerticalScoreWidget extends ScoreWidget {
 
 	public VerticalScoreWidget(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		
+		if (!this.isInEditMode()){
         redText.setText("0");
         blueText.setText("0");
+		}
 	}
 
 	protected void inflateView(Context context){

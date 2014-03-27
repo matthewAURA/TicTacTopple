@@ -35,10 +35,17 @@ public class ScoreWidget extends LinearLayout{
         
         redText = (TextView) this.findViewById(R.id.redPoints);
         blueText= (TextView) this.findViewById(R.id.bluePoints);
-        redText.setText("0");
-        blueText.setText("0");
-        redText.setTextSize(this.getResources().getDimension(R.dimen.scoreTextSize));
-        blueText.setTextSize(this.getResources().getDimension(R.dimen.scoreTextSize));
+        if (!this.isInEditMode()){
+	        redText.setText("0");
+	        blueText.setText("0");
+	        redText.setTextSize(this.getResources().getDimension(R.dimen.scoreTextSize));
+	        blueText.setTextSize(this.getResources().getDimension(R.dimen.scoreTextSize));
+	        try {
+				((TextView) this.findViewById(R.id.divider)).setTextSize(this
+						.getResources().getDimension(R.dimen.scoreTextSize));
+			} catch (NullPointerException e) {
+			}
+	    }
         this.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {

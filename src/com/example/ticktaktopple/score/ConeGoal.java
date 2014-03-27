@@ -6,7 +6,12 @@ public class ConeGoal extends Goal {
 	
 	public void addObjectsCount(Colour colour,int objects){
 		super.addObjectsCount(colour, objects);
-		this.lastColour = colour;
+		if (this.getObjects(colour) > 0){
+			this.lastColour = colour;
+		}else{
+			this.lastColour = null;
+		}
+		
 	}
 	
 	@Override

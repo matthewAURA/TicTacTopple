@@ -112,7 +112,7 @@
             <com.example.ticktaktopple.activity.VerticalScoreWidget
                 android:id="@+id/scoreComponent4"
                 android:layout_width="0dp"
-                android:layout_weight="0.25"
+                android:layout_weight="0.2"
                 android:gravity="center"
                 android:scaleType="fitCenter"
 				android:adjustViewBounds="true" >
@@ -131,7 +131,7 @@
             <com.example.ticktaktopple.activity.VerticalScoreWidget
                 android:id="@+id/scoreComponent5"
                 android:layout_width="0dp"
-                android:layout_weight="0.25"
+                android:layout_weight="0.2"
                 android:gravity="center"
                 android:scaleType="fitCenter"
 				android:adjustViewBounds="true" >

@@ -34,6 +34,7 @@ public class RampGoalWidget extends RelativeLayout {
 	    
 	    //Set up listeners
 	    goalImage = (ImageView)this.findViewById(R.id.goalImage);
+	    if (!this.isInEditMode()){
 	    goalImage.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
@@ -48,6 +49,7 @@ public class RampGoalWidget extends RelativeLayout {
 
 			}
 	    });
+	    }
 	}
 	
 	private void colourGoal(){
