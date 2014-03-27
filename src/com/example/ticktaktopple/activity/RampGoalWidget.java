@@ -20,7 +20,6 @@ import android.widget.RelativeLayout;
 public class RampGoalWidget extends RelativeLayout {
 
 	private ImageView goalImage;
-	private Colour ownsGoal;
 	private RampGoal goal;
 	private ScoreInvalidateListener invalidate;
 	
@@ -38,31 +37,40 @@ public class RampGoalWidget extends RelativeLayout {
 	    goalImage.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
-				if (ownsGoal == null){
-					ownsGoal = Colour.Red;
-					goalImage.setColorFilter(Color.parseColor("#FFFF8585"), PorterDuff.Mode.MULTIPLY );
-					
-				}else if (ownsGoal == Colour.Red){
-					ownsGoal = Colour.Blue;
-					goalImage.setColorFilter(Color.parseColor("#FF8585FF"), PorterDuff.Mode.MULTIPLY );
-				}else if(ownsGoal == Colour.Blue){
-					ownsGoal = null;
-					goalImage.setColorFilter(Color.parseColor("#FFFFFFFF"), PorterDuff.Mode.MULTIPLY );
+				if (goal.hasBonus() == null){
+					goal.setColour(Colour.Red);
+				}else if (goal.hasBonus() == Colour.Red){
+					goal.setColour(Colour.Blue);
+				}else if(goal.hasBonus() == Colour.Blue){
+					goal.setColour(null);
 				}
-				//Update Image and invalidate here
-				goal.setColour(ownsGoal);
-				if (invalidate != null){
-					invalidate.update();
-				}
+				colourGoal();
+
 			}
 	    });
 	}
+	
+	private void colourGoal(){
+		if (goal.hasBonus() == Colour.Red){
+			goalImage.setColorFilter(Color.parseColor("#FFFF8585"), PorterDuff.Mode.MULTIPLY );
+		}else if (goal.hasBonus() == Colour.Blue){
+			goalImage.setColorFilter(Color.parseColor("#FF8585FF"), PorterDuff.Mode.MULTIPLY );
+		}else if(goal.hasBonus() == null){
+			goalImage.setColorFilter(Color.parseColor("#FFFFFFFF"), PorterDuff.Mode.MULTIPLY );
+		}
+		//Update Image and invalidate here
+		if (invalidate != null){
+			invalidate.update();
+		}
+	}
+	
 	public void setInvlidateListener(ScoreInvalidateListener s){
 		this.invalidate = s;
 	}
 	
 	public void resetScore(){
 		goal.reset();
+		colourGoal();
 		this.invalidate();
 	}
 	
