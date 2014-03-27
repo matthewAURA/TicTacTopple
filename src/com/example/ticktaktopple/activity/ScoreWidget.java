@@ -24,7 +24,6 @@ public class ScoreWidget extends LinearLayout{
 	protected TextView blueText;
 	protected Goal goal;
 	protected List<ScoreInvalidateListener> scoreInvalid;
-	private boolean selected;
 	
 	public ScoreWidget(Context context,AttributeSet attrs){
 		super(context,attrs);
@@ -40,6 +39,7 @@ public class ScoreWidget extends LinearLayout{
         redText.setTextSize(this.getResources().getDimension(R.dimen.scoreTextSize));
         blueText.setTextSize(this.getResources().getDimension(R.dimen.scoreTextSize));
         this.setOnClickListener(new OnClickListener(){
+
 			@Override
 			public void onClick(View v) {
 				Log.d("ScoreComponent","OnClick");
@@ -95,26 +95,6 @@ public class ScoreWidget extends LinearLayout{
 		
 	}
 	
-	private void setBackgroundColour(){
-		if (goal.hasBonus() != null){
-		switch (goal.hasBonus()){
-		case Red:
-			this.setBackgroundColor(this.getResources().getColor(R.color.red_underlay));
-			break;
-		case Blue:
-			this.setBackgroundColor(this.getResources().getColor(R.color.blue_underlay));
-			break;
-		}
-		}else{
-			if(this.selected){
-				this.setBackgroundColor(this.getResources().getColor(R.color.backgroundGrey));
-			}else{
-				this.setBackgroundColor(this.getResources().getColor(R.color.white));
-			}
-			
-		}
-	}
-	
 	public void invalidate(){
 		super.invalidate();
 		redText.setText(Integer.toString(goal.getObjects(Colour.Red)));
@@ -125,7 +105,6 @@ public class ScoreWidget extends LinearLayout{
 		if(blueText.getText().toString().length() < 2){
 			blueText.setText(Integer.toString(goal.getObjects(Colour.Blue))+ " ");
 		}
-		this.setBackgroundColour();
 		for (ScoreInvalidateListener l:this.scoreInvalid){
 			l.update();
 		}
@@ -145,9 +124,12 @@ public class ScoreWidget extends LinearLayout{
 		this.invalidate();
 	}
 
-	public void selected(boolean changeSelected){
-		this.selected = changeSelected;
-		this.setBackgroundColour();
+	public void selected(boolean selected){
+		if(selected){
+			this.setBackgroundColor(this.getResources().getColor(R.color.backgroundGrey));
+		}else{
+			this.setBackgroundColor(this.getResources().getColor(R.color.white));
+		}
 		this.invalidate();
 	}
 	
