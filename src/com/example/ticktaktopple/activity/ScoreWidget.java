@@ -142,6 +142,7 @@ public class ScoreWidget extends LinearLayout{
 	
 	public void resetScore(){
 		goal.reset();
+		this.setBackgroundColour();
 		this.invalidate();
 	}
 

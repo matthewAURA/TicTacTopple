@@ -23,4 +23,9 @@ public class RampGoal extends Goal {
 		this.hasGoal = c;
 	}
 	
+	public void reset(){
+		this.setColour(null);
+		super.reset();
+	}
+	
 }

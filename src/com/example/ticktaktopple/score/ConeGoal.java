@@ -17,6 +17,13 @@ public class ConeGoal extends Goal {
 	public Colour hasBonus(){
 		return this.lastColour;
 	}
+	
+	public void reset(){
+		this.lastColour = null;
+		super.reset();
+	}
+	
+	
 
 
 }
