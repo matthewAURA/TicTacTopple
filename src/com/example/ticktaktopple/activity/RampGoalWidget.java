@@ -61,6 +61,11 @@ public class RampGoalWidget extends RelativeLayout {
 		this.invalidate = s;
 	}
 	
+	public void resetScore(){
+		goal.reset();
+		this.invalidate();
+	}
+	
 	public Goal getGoal(){
 		return this.goal;
 	}

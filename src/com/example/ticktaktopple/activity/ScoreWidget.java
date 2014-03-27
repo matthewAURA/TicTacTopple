@@ -118,6 +118,11 @@ public class ScoreWidget extends LinearLayout{
 	public Goal getGoal(){
 		return this.goal;
 	}
+	
+	public void resetScore(){
+		goal.reset();
+		this.invalidate();
+	}
 
 	public void selected(boolean selected){
 		if(selected){

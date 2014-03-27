@@ -25,6 +25,12 @@ public abstract class Goal {
 		return this.objects.get(colour);
 	}
 	
+	public void reset(){
+		this.objects = new HashMap<Colour,Integer>();
+		objects.put(Colour.Red,0);
+		objects.put(Colour.Blue,0);
+	}
+	
 	public Colour hasBonus(){
 		if (this.getObjects(Colour.Red) > this.getObjects(Colour.Blue)){
 			return Colour.Red;

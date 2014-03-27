@@ -112,6 +112,11 @@ public class ScoreActivity extends Activity implements ScoreInvalidateListener{
 	            for (ScoreWidget score: ScoreWidgets){
 	    	    	score.updateListener(this.simpleMode,this.scoreControl );
 	    	    }
+	        case R.id.resetScore:
+	        	for (ScoreWidget s:ScoreWidgets){
+	        		s.resetScore();
+	        	}
+	        	rampGoal.resetScore();
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
