@@ -50,9 +50,9 @@ public abstract class Goal {
 	public void addObjectsCount(Colour colour,int objects){
 		
 		int newInt = this.objects.get(colour);
-		Log.d("addObjectsCount call" + colour,Integer.toString(newInt));
-		
-		this.objects.put(colour, newInt+objects);
+		if (newInt+objects >= 0){
+			this.objects.put(colour, newInt+objects);
+		}
 	}
 	
 	
