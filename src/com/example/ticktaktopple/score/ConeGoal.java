@@ -1,11 +1,15 @@
 package com.example.ticktaktopple.score;
 
+import android.util.Log;
+
 public class ConeGoal extends Goal {
 
 	private Colour lastColour;
 	
 	public void addObjectsCount(Colour colour,int objects){
 		super.addObjectsCount(colour, objects);
+		Log.d("ConeGoal Add","Added Objects: " + Integer.toString(objects));
+		
 		if (this.getObjects(colour) > 0){
 			this.lastColour = colour;
 		}else{
@@ -24,10 +28,14 @@ public class ConeGoal extends Goal {
 	}
 	
 	public void reset(){
-		this.lastColour = null;
 		super.reset();
+		this.lastColour = null;
 	}
 	
+	public void reset(Colour c){
+		super.reset(c);
+		this.lastColour = null;
+	}
 	
 
 
