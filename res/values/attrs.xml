@@ -13,7 +13,7 @@
     </declare-styleable>
     
     <attr name="textAppearanceLarge" format="reference" color="#FF0000"/>
-
+	<attr name="textAppearanceMedium" format = "reference" colour="#FF0000"/>
     
     
 </resources>

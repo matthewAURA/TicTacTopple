@@ -1,9 +1,8 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     tools:context=".ScoreActivity" 
-    android:background="@color/white">
+    android:background="@color/white" xmlns:android="http://schemas.android.com/apk/res/android">
     <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content"></FrameLayout>
 
     <TableLayout
@@ -57,6 +56,33 @@
                 android:padding="10dp"
                 android:text="Blue"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/parkedTableRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/redRobotsParkedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parked"/>
+
+            <com.example.ticktaktopple.activity.ScoreWidget
+                android:id="@+id/parkedScoreWidget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </com.example.ticktaktopple.activity.ScoreWidget>
+
+            <TextView
+                android:id="@+id/blueRobotsParkedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parked" >
+
+</TextView>
         </TableRow>
 
     </TableLayout>

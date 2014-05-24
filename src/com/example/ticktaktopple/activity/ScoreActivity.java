@@ -6,6 +6,7 @@ import java.util.List;
 import com.example.ticktaktopple.listener.ScoreInvalidateListener;
 import com.example.ticktaktopple.score.ConeGoal;
 import com.example.ticktaktopple.score.CornerGoal;
+import com.example.ticktaktopple.score.ParkedGoal;
 import com.example.ticktaktopple.score.ScoreController;
 import com.example.ticktaktopple.score.ScoreRow;
 import com.example.ticktaktopple.score.Goal.Colour;
@@ -33,6 +34,7 @@ public class ScoreActivity extends Activity implements ScoreInvalidateListener{
 	private ScoreWidget goal6;
 	private ScoreWidget goal7;
 	private ScoreWidget goal8;
+	private ScoreWidget goal9;
 	
 	private RampGoalWidget rampGoal;
 	
@@ -53,6 +55,7 @@ public class ScoreActivity extends Activity implements ScoreInvalidateListener{
 		goal6 = (ScoreWidget) this.findViewById(R.id.scoreComponent6);
 		goal7 = (ScoreWidget) this.findViewById(R.id.scoreComponent7);
 		goal8 = (ScoreWidget) this.findViewById(R.id.scoreComponent8);
+		goal9 = (ScoreWidget) this.findViewById(R.id.parkedScoreWidget);
 		
 		rampGoal = (RampGoalWidget) this.findViewById(R.id.rampGoalWidget1);
 		rampGoal.setInvlidateListener(this);
@@ -65,6 +68,7 @@ public class ScoreActivity extends Activity implements ScoreInvalidateListener{
 		ScoreWidgets.add(goal6);
 		ScoreWidgets.add(goal7);
 		ScoreWidgets.add(goal8);
+		ScoreWidgets.add(goal9);
 		
 		goal1.setGoalType(new CornerGoal());
 		goal3.setGoalType(new CornerGoal());
@@ -76,6 +80,7 @@ public class ScoreActivity extends Activity implements ScoreInvalidateListener{
 		goal5.setGoalType(new ConeGoal());
 		goal7.setGoalType(new ConeGoal());
 		
+		goal9.setGoalType(new ParkedGoal());
 		this.scoreControl = (ScoreController) this.findViewById(R.id.scoreContoller1);
 		
 		for (ScoreWidget score: ScoreWidgets){

@@ -8,7 +8,7 @@ public class RampGoal extends Goal {
 	@Override
 	public int getPoints(Colour goal) {
 		if (this.hasGoal == goal){
-			return 10;
+			return 5;
 		}else{
 			return 0;
 		}
